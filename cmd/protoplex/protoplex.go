@@ -10,7 +10,7 @@ import (
 	"gopkg.in/alecthomas/kingpin.v2"
 )
 
-var version string
+var version string = "1.0";
 
 func printVersion() {
 	if version == "" {
@@ -24,7 +24,6 @@ func printVersion() {
 
 func main() {
 	app := kingpin.New("protoplex", "A fast and simple protocol multiplexer.")
-	logger := zerolog.New(os.Stdout).With().Timestamp().Logger()
 
 	version := app.Flag("version", "Prints the current program version").Short('V').Bool()
 
@@ -33,12 +32,14 @@ func main() {
 	pretty := app.Flag("pretty", "Enables pretty logging").Short('p').Bool()
 
 	ssh := app.Flag("ssh", "The SSH server address").String()
+	http := app.Flag("http", "The HTTP server address").String()
 	tls := app.Flag("tls", "The TLS/HTTPS server address").String()
 	openvpn := app.Flag("ovpn", "The OpenVPN server address").String()
-	http := app.Flag("http", "The HTTP server address").String()
-	socks5 := app.Flag("socks5", "The SOCKS5 server address").String()
 	socks4 := app.Flag("socks4", "The SOCKS4 server address").String()
+	socks5 := app.Flag("socks5", "The SOCKS5 server address").String()
 	// stRelay := flag.String("strelay", "", "The Syncthing Relay server address")
+
+	logger := zerolog.New(os.Stdout).With().Timestamp().Logger()
 
 	_, _ = app.Parse(os.Args[1:])
 
