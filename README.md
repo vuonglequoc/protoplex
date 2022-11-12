@@ -74,11 +74,13 @@ reducing the amount of protocols evaluated for a given handshake.
 
 Currently supported protocols are:
 
-- SSH
-- HTTP
-- TLS (/ HTTPS)
-- OpenVPN
-- SOCKS4 / SOCKS5
+| Protocol        | Bytestring comparison | Regex matching           |
+| --------------- | --------------------- | ------------------------ |
+| SSH             | {'S', 'S', 'H', '-'}  |                          |
+| HTTP            |                       | "^[A-Z]+ .+ HTTP/"       |
+| TLS (/ HTTPS)   | {0x16, 0x03, 0x01}    |                          |
+| OpenVPN         |                       | \`^\x00[\x0d-\xff]\x38\` |
+| SOCKS4 / SOCKS5 | {0x04} / {0x05}       |                          |
 
 Feel free to [file an issue](https://github.com/vuonglequoc/protoplex/issues/new)
 on the GitHub repository if you want a protocol to be supported. Please include
