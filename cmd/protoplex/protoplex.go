@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Pandentia/protoplex/protoplex"
-	"github.com/Pandentia/protoplex/protoplex/protocols"
+	"github.com/vuonglequoc/protoplex/protoplex"
+	"github.com/vuonglequoc/protoplex/protoplex/protocols"
 	"github.com/rs/zerolog"
 	"gopkg.in/alecthomas/kingpin.v2"
 )
@@ -28,7 +28,7 @@ func main() {
 
 	version := app.Flag("version", "Prints the current program version").Short('V').Bool()
 
-	bind := app.Flag("bind", "The address to bind to").Short('b').Default("0.0.0.0:8443").String()
+	bind := app.Flag("bind", "The address to bind to").Short('b').Default("0.0.0.0:443").String()
 	verbose := app.Flag("verbose", "Enables debug logging").Short('v').Bool()
 	pretty := app.Flag("pretty", "Enables pretty logging").Short('p').Bool()
 

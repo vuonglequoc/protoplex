@@ -1,4 +1,4 @@
-module github.com/Pandentia/protoplex
+module github.com/vuonglequoc/protoplex
 
 go 1.12
 

@@ -1,16 +1,20 @@
 # build
-FROM golang:1-alpine AS build
+FROM golang:alpine3.16 AS build
 
 RUN apk add git
-RUN mkdir -p /go/src/github.com/Pandentia
-COPY ./ /go/src/github.com/Pandentia/protoplex
-RUN go get github.com/Pandentia/protoplex/cmd/protoplex
+RUN mkdir -p /go/src/github.com/vuonglequoc
+COPY ./ /go/src/github.com/vuonglequoc/protoplex
+RUN cd /go/src/github.com/vuonglequoc/protoplex/ \
+ && go install cmd
 
 # deploy
-FROM alpine:latest
-COPY --from=build /go/bin/protoplex /protoplex
+FROM alpine:3.16.3
+COPY --from=build /go/src/github.com/vuonglequoc/protoplex/protoplex /protoplex
 
 USER 999
-ENTRYPOINT ["/protoplex"]
-EXPOSE 8443/tcp
+
+EXPOSE 443/tcp
+
 STOPSIGNAL SIGINT
+
+ENTRYPOINT ["/protoplex"]

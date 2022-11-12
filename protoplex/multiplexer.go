@@ -8,7 +8,7 @@ import (
 
 	"github.com/rs/zerolog"
 
-	"github.com/Pandentia/protoplex/protoplex/protocols"
+	"github.com/vuonglequoc/protoplex/protoplex/protocols"
 )
 
 // RunServer runs protoplex
