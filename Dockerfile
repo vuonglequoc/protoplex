@@ -6,11 +6,11 @@ COPY ./ /go/src/github.com/vuonglequoc/protoplex
 RUN cd /go/src/github.com/vuonglequoc/protoplex/ \
  && mkdir build \
  && cd build/ \
- && go build ../cmd/protoplex/
+ && go install ../cmd/protoplex/
 
 # deploy
 FROM alpine:3.16.3
-COPY --from=build /go/src/github.com/vuonglequoc/protoplex/build/protoplex /protoplex
+COPY --from=build /go/bin/protoplex /protoplex
 
 USER 999
 
