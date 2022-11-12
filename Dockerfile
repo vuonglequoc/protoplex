@@ -1,7 +1,6 @@
 # build
 FROM golang:alpine3.16 AS build
 
-RUN apk add git
 RUN mkdir -p /go/src/github.com/vuonglequoc
 COPY ./ /go/src/github.com/vuonglequoc/protoplex
 RUN cd /go/src/github.com/vuonglequoc/protoplex/ \
