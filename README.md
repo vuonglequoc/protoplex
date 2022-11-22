@@ -2,7 +2,7 @@
 
 *An application protocol multiplexer*
 
-![Build Status](https://jenkins.kinguda.com/buildStatus/icon?job=protoplex)
+[![Build Status](https://jenkins.kinguda.com/buildStatus/icon?job=protoplex)](https://jenkins.kinguda.com/buildStatus/icon?job=protoplex)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fvuonglequoc%2Fprotoplex.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fvuonglequoc%2Fprotoplex?ref=badge_shield)
 
 ## What is this?
