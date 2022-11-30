@@ -9,7 +9,7 @@ RUN cd /go/src/github.com/vuonglequoc/protoplex/ \
  && go install ../cmd/protoplex/
 
 # deploy
-FROM alpine:3.16.3
+FROM alpine:3.17.0
 COPY --from=build /go/bin/protoplex /protoplex
 
 USER 999
