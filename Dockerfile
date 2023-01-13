@@ -1,5 +1,5 @@
 # build
-FROM golang:alpine3.16 AS build
+FROM golang:alpine3.17 AS build
 
 RUN mkdir -p /go/src/github.com/vuonglequoc
 COPY ./ /go/src/github.com/vuonglequoc/protoplex
@@ -9,7 +9,7 @@ RUN cd /go/src/github.com/vuonglequoc/protoplex/ \
  && go install ../cmd/protoplex/
 
 # deploy
-FROM alpine:3.17.0
+FROM alpine:3.17.1
 COPY --from=build /go/bin/protoplex /protoplex
 
 USER 999
