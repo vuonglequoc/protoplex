@@ -24,7 +24,7 @@ Client --> Single Port --> Validator /  |--> TLS (/ HTTPS) 8443/TCP
 ### Native
 
 Requirements:
-* [golang 1.19.5](https://hub.docker.com/_/golang)
+* [golang 1.20.0](https://hub.docker.com/_/golang)
 
 Assuming you have a properly configured Go setup, get and compile the multiplexer with
 
