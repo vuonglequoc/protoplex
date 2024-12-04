@@ -1,5 +1,5 @@
 # build
-FROM golang:1.23.2-alpine3.20 AS build
+FROM golang:1.23.4-alpine3.20 AS build
 
 RUN mkdir -p /go/src/github.com/vuonglequoc
 COPY ./ /go/src/github.com/vuonglequoc/protoplex
